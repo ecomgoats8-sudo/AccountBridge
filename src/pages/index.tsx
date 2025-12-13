@@ -259,11 +259,14 @@ const Index = () => {
             <Card className="overflow-hidden shadow-2xl glow-border bg-card/50 backdrop-blur-sm hover:scale-[1.02] transition-transform">
               <CardContent className="p-0">
                 <div className="relative aspect-video bg-gradient-to-br from-muted to-secondary/30">
-                  <img
-                    src="/hero-background.jpg"
-                    alt="Video thumbnail - How we work"
+                  <video
+                    poster="/heroImage.jpeg"
                     className="w-full h-full object-cover"
-                  />
+                    controls
+                  >
+                    <source src="/hero-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   <div className="absolute inset-0 flex items-center justify-center bg-black/50 hover:bg-black/40 transition-colors">
                     <Button
                       size="lg"
