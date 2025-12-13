@@ -24,10 +24,11 @@ import {
   Clock,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import heroImage from "@/assets/hero-background.jpg";
+import { sendEmail } from "@/lib/email";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,19 +38,41 @@ const Index = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Application Received!",
-      description: "We'll contact you within 24 hours with your valuation.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      accountAge: "",
-      followers: "",
-      details: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const emailSent = await sendEmail(formData);
+
+      if (emailSent) {
+        toast({
+          title: "Application Received!",
+          description: "We'll contact you within 24 hours with your valuation.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          accountAge: "",
+          followers: "",
+          details: "",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send application. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send application. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToSection = (id: string) => {
@@ -67,12 +90,15 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="relative">
+              {/* <div className="relative">
                 <Facebook className="h-10 w-10 text-gold" />
                 <div className="absolute inset-0 blur-xl bg-gold/30"></div>
-              </div>
+              </div> */}
               <span className="text-2xl font-bold text-foreground tracking-tight">
-                AccountBridge
+                Account
+              </span>
+              <span className="text-2xl font-bold text-gold tracking-tight">
+                Bridge
               </span>
             </div>
 
@@ -94,7 +120,7 @@ const Index = () => {
                 onClick={() => scrollToSection("contact")}
                 className="bg-gold text-black hover:bg-gold-light font-bold uppercase tracking-wider shadow-[var(--shadow-gold)] hover:scale-105 transition-all relative overflow-hidden group"
               >
-                <span className="relative z-10">Apply Now</span>
+                <span className="relative z-10">Contact Now</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </Button>
             </nav>
@@ -234,7 +260,7 @@ const Index = () => {
               <CardContent className="p-0">
                 <div className="relative aspect-video bg-gradient-to-br from-muted to-secondary/30">
                   <img
-                    src={heroImage}
+                    src="/hero-background.jpg"
                     alt="Video thumbnail - How we work"
                     className="w-full h-full object-cover"
                   />
@@ -783,11 +809,21 @@ const Index = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-gold text-black hover:bg-gold-light font-bold text-xl py-8 uppercase tracking-wider shadow-[var(--shadow-gold)] hover:scale-105 transition-all relative overflow-hidden group"
+                  disabled={isSubmitting}
+                  className="w-full bg-gold text-black hover:bg-gold-light font-bold text-xl py-8 uppercase tracking-wider shadow-[var(--shadow-gold)] hover:scale-105 transition-all relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    Submit for Valuation
-                    <ArrowRight className="h-6 w-6" />
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-black"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Submit for Valuation
+                        <ArrowRight className="h-6 w-6" />
+                      </>
+                    )}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </Button>
@@ -815,11 +851,16 @@ const Index = () => {
             {/* Column 1 */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="relative">
+                {/* <div className="relative">
                   <Facebook className="h-12 w-12 text-gold" />
                   <div className="absolute inset-0 blur-xl bg-gold/30"></div>
-                </div>
-                <span className="text-2xl font-bold">AccountBridge</span>
+                </div> */}
+                <span className="text-2xl font-bold text-foreground tracking-tight">
+                  Account
+                </span>
+                <span className="text-2xl font-bold text-gold tracking-tight">
+                  Bridge
+                </span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Professional Facebook account acquisition services since 2024.
