@@ -259,29 +259,11 @@ const Index = () => {
             <Card className="overflow-hidden shadow-2xl glow-border bg-card/50 backdrop-blur-sm hover:scale-[1.02] transition-transform">
               <CardContent className="p-0">
                 <div className="relative aspect-video bg-gradient-to-br from-muted to-secondary/30">
-                  <video
-                    poster="/heroImage.jpeg"
+                  <img
+                    src="/heroImage.jpeg"
+                    alt="Hero visual"
                     className="w-full h-full object-cover"
-                    controls
-                  >
-                    <source src="/hero-video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 hover:bg-black/40 transition-colors">
-                    <Button
-                      size="lg"
-                      className="rounded-full h-24 w-24 bg-gold hover:bg-gold-light text-black hover:scale-110 transition-all shadow-2xl relative group"
-                    >
-                      <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-20"></div>
-                      <svg
-                        className="h-12 w-12 ml-1 relative z-10"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </Button>
-                  </div>
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -342,10 +324,10 @@ const Index = () => {
                   <p className="flex items-center gap-2">
                     <Mail className="w-5 h-5 text-gold" />
                     <a
-                      href="mailto:support@accountbridge.io"
+                      href="mailto:ecomgoats8@gmail.com"
                       className="text-gold hover:text-gold-light underline transition-colors font-medium"
                     >
-                      support@accountbridge.io
+                      ecomgoats8@gmail.com
                     </a>
                   </p>
                   <p className="flex items-center gap-2">
@@ -878,7 +860,7 @@ const Index = () => {
               </h4>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p className="hover:text-gold transition-colors">
-                  support@accountbridge.io
+                  ecomgoats8@gmail.com
                 </p>
               </div>
             </div>
