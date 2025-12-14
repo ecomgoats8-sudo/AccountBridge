@@ -210,9 +210,11 @@ const Index = () => {
             <div className="flex items-center justify-center gap-3 pt-6">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <div
+                  <img
                     key={i}
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-gold/20 to-muted border-2 border-background shadow-lg"
+                    src={`/testimonials/avatar_${i}.png`}
+                    alt={`Satisfied Seller ${i}`}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-background shadow-lg"
                   />
                 ))}
               </div>
@@ -331,9 +333,9 @@ const Index = () => {
                       Our Mission
                     </p>
                     <p>
-                      We help individuals and businesses exit Facebook on their
-                      terms, providing transparent valuations and fast payments
-                      for quality accounts.
+                      We help individuals and businesses exit Facebook pages on
+                      their terms, providing transparent valuations and fast
+                      payments for quality accounts.
                     </p>
                   </div>
                 </div>
@@ -551,13 +553,13 @@ const Index = () => {
                 </footer>
               </blockquote>
 
-              <a
+              {/* <a
                 href="#"
                 className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-bold uppercase tracking-wider transition-all hover:gap-4"
               >
                 View Full Portfolio
                 <ExternalLink className="h-5 w-5" />
-              </a>
+              </a> */}
             </CardContent>
           </Card>
         </div>
