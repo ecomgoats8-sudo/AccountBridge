@@ -318,8 +318,8 @@ const Index = () => {
                       AccountBridge Digital Solutions
                     </p>
                     <p>
-                      A legitimate, registered business specializing in fair
-                      Facebook account acquisitions since 2024.
+                      A legitimate, registered business specialized in theme
+                      page acquisitions since 2024.
                     </p>
                   </div>
                 </div>
@@ -348,7 +348,7 @@ const Index = () => {
                       ecomgoats8@gmail.com
                     </a>
                   </p>
-                  <p className="flex items-center gap-2">
+                  {/* <p className="flex items-center gap-2">
                     <ExternalLink className="w-5 h-5 text-gold" />
                     <a
                       href="https://www.accountbridge.digital"
@@ -356,7 +356,7 @@ const Index = () => {
                     >
                       www.accountbridge.digital
                     </a>
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -387,7 +387,9 @@ const Index = () => {
                       Co-Founder & Chief of Strategy
                     </p>
                     <p className="text-base text-muted-foreground leading-relaxed text-center">
-                      JP Morgan sales training. $150K+ in e-commerce sales.
+                      Prior Sales Training at JP Morgan
+                      <br />
+                      $150K+ in e-commerce sales.
                     </p>
                   </div>
 
@@ -507,7 +509,7 @@ const Index = () => {
                       Client
                     </p>
                     <p className="text-lg text-foreground">
-                      Small business owner transitioning to TikTok
+                      Facbook page in the health niche
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-secondary/30 border border-gold/10">
@@ -515,7 +517,7 @@ const Index = () => {
                       Account Details
                     </p>
                     <p className="text-lg text-foreground">
-                      15K followers • 8-year history • High engagement
+                      400K followers • 2-year history • High engagement
                     </p>
                   </div>
                 </div>
@@ -525,7 +527,7 @@ const Index = () => {
                     <p className="text-sm text-gold font-bold uppercase tracking-wider mb-1">
                       Purchase Price
                     </p>
-                    <p className="text-4xl font-bebas text-gold">$8,500</p>
+                    <p className="text-4xl font-bebas text-gold">$7,500</p>
                   </div>
                   <div className="p-4 rounded-lg bg-secondary/30 border border-gold/10">
                     <p className="text-sm text-gold font-bold uppercase tracking-wider mb-1 flex items-center gap-2">
