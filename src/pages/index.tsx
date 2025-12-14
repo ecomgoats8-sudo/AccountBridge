@@ -259,11 +259,29 @@ const Index = () => {
             <Card className="overflow-hidden shadow-2xl glow-border bg-card/50 backdrop-blur-sm hover:scale-[1.02] transition-transform">
               <CardContent className="p-0">
                 <div className="relative aspect-video bg-gradient-to-br from-muted to-secondary/30">
-                  <img
-                    src="/heroImage.jpeg"
-                    alt="Hero visual"
+                  <video
+                    poster="/hero-background.jpg"
                     className="w-full h-full object-cover"
-                  />
+                    controls
+                  >
+                    <source src="/hero-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 hover:bg-black/40 transition-colors">
+                    <Button
+                      size="lg"
+                      className="rounded-full h-24 w-24 bg-gold hover:bg-gold-light text-black hover:scale-110 transition-all shadow-2xl relative group"
+                    >
+                      <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-20"></div>
+                      <svg
+                        className="h-12 w-12 ml-1 relative z-10"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -355,25 +373,39 @@ const Index = () => {
 
                 <div className="space-y-8">
                   <div className="space-y-3 p-6 rounded-lg bg-secondary/30 border border-gold/10">
-                    <h4 className="text-2xl font-bold text-foreground">
+                    <div className="mb-4">
+                      <img
+                        src="/founder1.jpeg"
+                        alt="Abdallah Nuruddeen"
+                        className="w-32 h-32 rounded-full object-cover border-2 border-gold/30 mx-auto"
+                      />
+                    </div>
+                    <h4 className="text-2xl font-bold text-foreground text-center">
                       Abdallah Nuruddeen
                     </h4>
-                    <p className="text-sm text-gold font-bold uppercase tracking-widest">
+                    <p className="text-sm text-gold font-bold uppercase tracking-widest text-center">
                       Co-Founder & Chief of Strategy
                     </p>
-                    <p className="text-base text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed text-center">
                       JP Morgan sales training. $150K+ in e-commerce sales.
                     </p>
                   </div>
 
                   <div className="space-y-3 p-6 rounded-lg bg-secondary/30 border border-gold/10">
-                    <h4 className="text-2xl font-bold text-foreground">
+                    <div className="mb-4">
+                      <img
+                        src="/founder_vk.png"
+                        alt="Vivek Katari"
+                        className="w-32 h-32 rounded-full object-cover border-2 border-gold/30 mx-auto"
+                      />
+                    </div>
+                    <h4 className="text-2xl font-bold text-foreground text-center">
                       Vivek Katari
                     </h4>
-                    <p className="text-sm text-gold font-bold uppercase tracking-widest">
+                    <p className="text-sm text-gold font-bold uppercase tracking-widest text-center">
                       Co-Founder & Chief of Marketing
                     </p>
-                    <p className="text-base text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed text-center">
                       Former Chief of Marketing at Owner.com, a restaurant
                       company now valued at $1B. $250K+ in e-commerce sales.
                     </p>
